@@ -15,7 +15,7 @@
         </tr>
     </table>
     
-    {!! link_to_route('tasks.edit', 'このメッセージを編集', ['id' => $task->id], ['class' => 'btn btn-light']) !!}
+    {!! link_to_route('task.edit', 'このメッセージを編集', ['id' => $task->id], ['class' => 'btn btn-light']) !!}
 
     {!! Form::model($task, ['route' => ['task.destroy', $task->id], 'method' => 'delete']) !!}
         {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
