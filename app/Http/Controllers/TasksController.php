@@ -12,18 +12,18 @@ class TasksController extends Controller
     public function index()
     {
 
-        $task = Task::all();
+        $tasks = Task::all();
 
         return view('task.index', [
-            'task' => $task,
+            'tasks' => $tasks,
         ]);
     }
     // getでTask/createにアクセスされた場合の「新規登録画面表示処理」
     public function create()
     {
-        $task = new task;
+        $task = new Task;
 
-        return view('tasks.create', [
+        return view('task.create', [
             'task' => $task,
         ]);
     }
@@ -31,7 +31,7 @@ class TasksController extends Controller
     // postでTask/にアクセスされた場合の「新規登録処理」
     public function store(Request $request)
     {
-        $task = new task;
+        $task = new Task;
         $task->content = $request->content;
         $task->save();
 
@@ -43,7 +43,7 @@ class TasksController extends Controller
     {
         $task = Task::find($id);
 
-        return view('tasks.show', [
+        return view('task.show', [
             'task' => $task,
         ]);
     }
@@ -53,7 +53,7 @@ class TasksController extends Controller
     {
         $task = Task::find($id);
 
-        return view('tasks.edit', [
+        return view('task.edit', [
             'task' => $task,
         ]);
     }

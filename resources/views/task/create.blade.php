@@ -17,5 +17,13 @@
         
             {!! Form::close() !!}
         </div>
+        
+        <div class="collapse navbar-collapse" id="nav-bar">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">{!! link_to_route('task.create', '新規メッセージの投稿', [], ['class' => 'nav-link']) !!}</li>
+            </ul>
+        </div>
+        
     </div>
 @endsection
